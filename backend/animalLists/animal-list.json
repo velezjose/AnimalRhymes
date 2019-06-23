@@ -1,4 +1,4 @@
-module.exports = {
+{
   "A": [
     "Aardvark",
     "Abyssinian",
@@ -644,4 +644,4 @@ module.exports = {
     "Zonkey",
     "Zorse"
   ]
-};
+}
