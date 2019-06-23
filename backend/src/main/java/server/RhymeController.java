@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RestController
 public class RhymeController {
 
-    private static final String template = "said the %s!";
+    private static final String TEMPLATE = "said the %s!";
 
     @RequestMapping(value="/savageRhymes", method=RequestMethod.GET)
     public Rhyme savageRhymes(@RequestParam(value="q", defaultValue="bird") String word) {
-        return new Rhyme(String.format(template, word));
+        return new Rhyme(String.format(TEMPLATE, word));
     }
 }
