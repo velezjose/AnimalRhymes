@@ -1,15 +1,18 @@
 import React from 'react';
 import './App.css';
 
-import Search from './components/Search';
 import Navbar from './components/Navbar';
+import SearchRoot from './components/SearchRoot';
+import { MockRhymeRepository } from './repositories/MockRhymeRepository';
+
+const rhymeRepository = new MockRhymeRepository();
 
 function App() {
   return (
-    <div classNamee="App">
+    <div className="App">
       <Navbar></Navbar>
       <div className="App-header">
-        <Search></Search>
+        <SearchRoot rhymeRepository={rhymeRepository}></SearchRoot>
       </div>
     </div>
   );

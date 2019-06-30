@@ -14,7 +14,7 @@ class Navbar extends React.Component {
     };
     let reverseHorsePicStyle = Object.assign({}, horsePicStyle, flipImageStyle);
     return (
-      <div class='navbar'>
+      <div className='navbar'>
         <img src={horsePic} alt='horse' style={horsePicStyle}></img>
         <h2>Animal Rhymes</h2>
         <img src={horsePic} alt='horse' style={reverseHorsePicStyle} ></img>
