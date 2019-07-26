@@ -1,5 +1,5 @@
 {
-  "A": [
+ "allAnimals": [
     "Aardvark",
     "Abyssinian",
     "Adelie Penguin",
@@ -51,9 +51,7 @@
     "Australian Terrier",
     "Avocet",
     "Axolotl",
-    "Aye Aye"
-  ],
-  "B": [
+    "Aye Aye",
     "Baboon",
     "Bactrian Camel",
     "Badger",
@@ -119,9 +117,7 @@
     "Burmese",
     "Burrowing Frog",
     "Butterfly",
-    "Butterfly Fish"
-  ],
-  "C": [
+    "Butterfly Fish",
     "Caiman",
     "Caiman Lizard",
     "Cairn Terrier",
@@ -175,9 +171,7 @@
     "Cross River Gorilla",
     "Curly Coated Retriever",
     "Cuscus",
-    "Cuttlefish"
-  ],
-  "D": [
+    "Cuttlefish",
     "Dachshund",
     "Dalmatian",
     "Darwin's Frog",
@@ -201,9 +195,7 @@
     "Dugong",
     "Dunker",
     "Dusky Dolphin",
-    "Dwarf Crocodile"
-  ],
-  "E": [
+    "Dwarf Crocodile",
     "Eagle",
     "Earwig",
     "Eastern Gorilla",
@@ -224,9 +216,7 @@
     "Entlebucher Mountain Dog",
     "Epagneul Pont Audemer",
     "Eskimo Dog",
-    "Estrela Mountain Dog"
-  ],
-  "F": [
+    "Estrela Mountain Dog",
     "Falcon",
     "Fennec Fox",
     "Ferret",
@@ -248,9 +238,7 @@
     "Frigatebird",
     "Frilled Lizard",
     "Frog",
-    "Fur Seal"
-  ],
-  "G": [
+    "Fur Seal",
     "Galapagos Penguin",
     "Galapagos Tortoise",
     "Gar",
@@ -291,9 +279,7 @@
     "Grouse",
     "Guinea Fowl",
     "Guinea Pig",
-    "Guppy"
-  ],
-  "H": [
+    "Guppy",
     "Hammerhead Shark",
     "Hamster",
     "Hare",
@@ -316,9 +302,7 @@
     "Humboldt Penguin",
     "Hummingbird",
     "Humpback Whale",
-    "Hyena"
-  ],
-  "I": [
+    "Hyena",
     "Ibis",
     "Ibizan Hound",
     "Iguana",
@@ -331,9 +315,7 @@
     "Indri",
     "Insect",
     "Irish Setter",
-    "Irish WolfHound"
-  ],
-  "J": [
+    "Irish WolfHound",
     "Jack Russel",
     "Jackal",
     "Jaguar",
@@ -341,9 +323,7 @@
     "Japanese Macaque",
     "Javan Rhinoceros",
     "Javanese",
-    "Jellyfish"
-  ],
-  "K": [
+    "Jellyfish",
     "Kakapo",
     "Kangaroo",
     "Keel Billed Toucan",
@@ -354,9 +334,7 @@
     "Kiwi",
     "Koala",
     "Komodo Dragon",
-    "Kudu"
-  ],
-  "L": [
+    "Kudu",
     "Labradoodle",
     "Labrador Retriever",
     "Ladybird",
@@ -375,9 +353,7 @@
     "Llama",
     "Lobster",
     "Long-Eared Owl",
-    "Lynx"
-  ],
-  "M": [
+    "Lynx",
     "Macaroni Penguin",
     "Macaw",
     "Magellanic Penguin",
@@ -396,6 +372,7 @@
     "Mastiff",
     "Mayfly",
     "Meerkat",
+    "Mice",
     "Millipede",
     "Minke Whale",
     "Mole",
@@ -412,9 +389,7 @@
     "Mountain Gorilla",
     "Mountain Lion",
     "Mouse",
-    "Mule"
-  ],
-  "N": [
+    "Mule",
     "Neanderthal",
     "Neapolitan Mastiff",
     "Newfoundland",
@@ -423,9 +398,7 @@
     "Norfolk Terrier",
     "Norwegian Forest",
     "Numbat",
-    "Nurse Shark"
-  ],
-  "O": [
+    "Nurse Shark",
     "Ocelot",
     "Octopus",
     "Okapi",
@@ -435,9 +408,7 @@
     "Orang-utan",
     "Ostrich",
     "Otter",
-    "Oyster"
-  ],
-  "P": [
+    "Oyster",
     "Pademelon",
     "Panther",
     "Parrot",
@@ -472,15 +443,11 @@
     "Purple Emperor",
     "Puss Moth",
     "Pygmy Hippopotamus",
-    "Pygmy Marmoset"
-  ],
-  "Q": [
+    "Pygmy Marmoset",
     "Quail",
     "Quetzal",
     "Quokka",
-    "Quoll"
-  ],
-  "R": [
+    "Quoll",
     "Rabbit",
     "Raccoon",
     "Raccoon Dog",
@@ -502,9 +469,7 @@
     "Roseate Spoonbill",
     "Rottweiler",
     "Royal Penguin",
-    "Russian Blue"
-  ],
-  "S": [
+    "Russian Blue",
     "Sabre-Toothed Tiger",
     "Saint Bernard",
     "Salamander",
@@ -565,9 +530,7 @@
     "Sumatran Rhinoceros",
     "Sumatran Tiger",
     "Sun Bear",
-    "Swan"
-  ],
-  "T": [
+    "Swan",
     "Tang",
     "Tapanuli Orang-utan",
     "Tapir",
@@ -588,19 +551,13 @@
     "Tropicbird",
     "Tuatara",
     "Turkey",
-    "Turkish Angora"
-  ],
-  "U": [
+    "Turkish Angora",
     "Uakari",
     "Uguisu",
-    "Umbrellabird"
-  ],
-  "V": [
+    "Umbrellabird",
     "Vampire Bat",
     "Vervet Monkey",
-    "Vulture"
-  ],
-  "W": [
+    "Vulture",
     "Wallaby",
     "Walrus",
     "Warthog",
@@ -627,21 +584,15 @@
     "Woodpecker",
     "Woolly Mammoth",
     "Woolly Monkey",
-    "Wrasse"
-  ],
-  "X": [
-    "X-Ray Tetra"
-  ],
-  "Y": [
+    "Wrasse",
+    "X-Ray Tetra",
     "Yak",
     "Yellow-Eyed Penguin",
-    "Yorkshire Terrier"
-  ],
-  "Z": [
+    "Yorkshire Terrier",
     "Zebra",
     "Zebra Shark",
     "Zebu",
     "Zonkey",
     "Zorse"
-  ]
+   ]
 }

@@ -1,14 +1,17 @@
-package server;
+package com.animalrhymes.server;
 
+/*
+ * A Rhyme contains a list of words (animals) that rhyme with another word.
+ */
 public class Rhyme {
-    private final String[] results;
+    private final String[] RESULTS;
 
     public Rhyme(String word) {
-        String[] rs = { "bird", "horse", "cow" };
-        this.results = rs;
+        String[] results = RhymeEngine.getAnimalsThatRhymeWith(word);
+        this.RESULTS = results;
     }
 
     public String[] getResults() {
-        return this.results;
+        return this.RESULTS;
     }
 }
