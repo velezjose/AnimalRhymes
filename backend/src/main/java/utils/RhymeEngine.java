@@ -71,7 +71,7 @@ public class RhymeEngine {
     public static String[] getAnimalsThatRhymeWith(String word) {
         String wordPhonetic = WordPhoneticGetter.getPhonetic(word);
 
-        System.out.println("Phonetic -> " + wordPhonetic + ", Word -> " + word);
+        System.out.println("Word -> " + word + ", Phonetic -> " + wordPhonetic + "\n");
 
         if (wordPhonetic.equals("")) {
             return DEFAULT_EMPTY_LIST;
