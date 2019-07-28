@@ -18,10 +18,10 @@ public class AnimalAndPhoneticFileCreator {
             writer.write(FIRSTLINE);
             writer.newLine();
             for (String animal : LIST_OF_ANIMALS) {
-                System.out.print(animal + " -> ");
                 String[] animalWords = animal.split(" ");
                 String lastWordOfAnimal = animalWords[animalWords.length - 1];
                 String phonetic = WordPhoneticGetter.getPhonetic(lastWordOfAnimal);
+                System.out.println("Animal -> " + animal + ", Phonetic -> " + phonetic);
 
                 if (phonetic.equals("NOT FOUND")) {
                     System.out.println("REMOVE ANIMAL:" + animal);

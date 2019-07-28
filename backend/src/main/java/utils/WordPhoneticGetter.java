@@ -14,36 +14,52 @@ import java.net.URL;
  */
 public class WordPhoneticGetter {
     private static final String USER_AGENT = "Mozilla/5.0";
-    private static final String GET_URL = "https://googledictionaryapi.eu-gb.mybluemix.net/?define=";
+    private static final String GET_URL = "https://od-api.oxforddictionaries.com:443/api/v2/entries/en-us/";
+	private static final String PRONUNCIATION_FIELD = "fields=pronunciations";
+	private static int current = 0;
 
     public static String getPhonetic(String word) {
+    	// API only handles 500 rpm. This is a lazy way to handle this.
+    	current += 1;
+    	if (current == 499) {
+			current = 0;
+			try {
+				Thread.sleep(60000);
+			} catch(InterruptedException ex) {
+				Thread.currentThread().interrupt();
+			}
+		}
+
         try {
             String json = sendGET(word);
-            List<String> phonetic = JsonPath.read(json, "$.*.phonetic");
-            String phoneticWithSlashes;
+            List<LinkedHashMap> phonetic = JsonPath.read(json, "$.results[0].lexicalEntries[0].pronunciations");
 
-            if (phonetic.size() != 0) {
-                phoneticWithSlashes = phonetic.get(0);
-                return phoneticWithSlashes.substring(1, phoneticWithSlashes.length() - 1);
-            } else {
-                return "";
-            }
-        } catch (IOException ioe) {
+            for (LinkedHashMap lhm : phonetic) {
+            	if (lhm.get("phoneticNotation") != null && lhm.get("phoneticNotation").equals("IPA")) {
+            		return (String) lhm.get("phoneticSpelling");
+				}
+			}
+
+            return "";
+        } catch (IOException | PathNotFoundException ex) {
             System.err.println("IOException thrown!");
-            ioe.printStackTrace();
+            ex.printStackTrace();
             return "";
         }
     }
 
     private static String sendGET(String word) throws IOException {
-        URL obj = new URL(GET_URL + word);
+        URL obj = new URL(GET_URL + word.toLowerCase() + "?" + PRONUNCIATION_FIELD);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
+		con.setRequestProperty("Accept","application/json");
+        con.setRequestProperty("app_id", Config.APP_ID.getValue());
+        con.setRequestProperty("app_key", Config.APP_KEY.getValue());
 
         int responseCode = con.getResponseCode();
-        System.out.print("GET Response Code :: " + responseCode + "\n");
+        System.out.println("GET Response Code :: " + responseCode);
 
         if (responseCode == HttpURLConnection.HTTP_OK) {
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -57,7 +73,7 @@ public class WordPhoneticGetter {
 
             return response.toString();
         } else {
-            return "[ { \"phonetic\" : \"NOT FOUND\" } ]"; //default phonetic is no phonetic, i.e. empty str
+            return "{ \"results\": [] }";
         }
     }
 }

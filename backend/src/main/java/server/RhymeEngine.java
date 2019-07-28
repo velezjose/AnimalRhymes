@@ -24,10 +24,13 @@ public class RhymeEngine {
     // Create HashMap from phonetic –> list of animals
     private RhymeEngine() {
         if (!Files.exists(Paths.get(FILENAME))) {
+        	System.out.println("Creating file because does not exist...");
             AnimalAndPhoneticFileCreator.createFile();
-        }
+			System.out.println("File created.");
+		}
 
         if (!createdHashMap) {
+        	System.out.println("Creating HashMap for RhymeEngine...");
             String line = null;
             try (FileReader fileReader = new FileReader(FILENAME);
                  BufferedReader bufferedReader = new BufferedReader(fileReader)) {
@@ -44,23 +47,19 @@ public class RhymeEngine {
 
                     for (int i = 0; i < phonetic.length(); i++) {
                         String phoneticSubstr = phonetic.substring(i);
-                        System.out.println("KEY: " + phoneticSubstr);
 
                         List<String> list = HM.get(phoneticSubstr);
-                        System.out.println("VALUE: " + list);
 
-                         if (list == null) {
-                             list = new ArrayList<String>();
-                             // Add the animal to the end of the list
-                         }
+                        if (list == null) {
+                        	list = new ArrayList<String>();
+							// Add the newly created list to the hash map
+							HM.put(phoneticSubstr, list);
+                        }
+                        // Add the animal to the end of the list
                         list.add(animal);
-                        // Add the newly created list to the hash map
-                        HM.put(phoneticSubstr, list);
-
-                        System.out.println("AUGMENTED LIST: " + list.toString());
                     }
                 }
-
+				System.out.println("HashMap created successfully.");
             } catch (IOException ioe) {
                 System.err.println("IOException thrown!");
                 ioe.printStackTrace();
