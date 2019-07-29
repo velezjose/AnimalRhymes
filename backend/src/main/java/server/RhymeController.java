@@ -1,4 +1,4 @@
-package server;
+package com.animalrhymes.server;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -7,11 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 public class RhymeController {
-
-    private static final String TEMPLATE = "said the %s!";
-
-    @RequestMapping(value="/savageRhymes", method=RequestMethod.GET)
-    public Rhyme savageRhymes(@RequestParam(value="q", defaultValue="bird") String word) {
-        return new Rhyme(String.format(TEMPLATE, word));
-    }
+	@RequestMapping(value = "/savageRhymes", method = RequestMethod.GET)
+	public Rhyme savageRhymes(@RequestParam(value = "q", defaultValue = "bird") String word) {
+		String[] rhymes = RhymeEngine.getAnimalsThatRhymeWith(word);
+		return new Rhyme(rhymes);
+	}
 }
