@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 public class RhymeController {
-    @RequestMapping(value="/savageRhymes", method=RequestMethod.GET)
-    public Rhyme savageRhymes(@RequestParam(value="q", defaultValue="bird") String word) {
-        return new Rhyme(word);
-    }
+	@RequestMapping(value = "/savageRhymes", method = RequestMethod.GET)
+	public Rhyme savageRhymes(@RequestParam(value = "q", defaultValue = "bird") String word) {
+		String[] rhymes = RhymeEngine.getAnimalsThatRhymeWith(word);
+		return new Rhyme(rhymes);
+	}
 }

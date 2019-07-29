@@ -4,14 +4,13 @@ package com.animalrhymes.server;
  * A Rhyme contains a list of words (animals) that rhyme with another word.
  */
 public class Rhyme {
-    private final String[] RESULTS;
+	private final String[] RESULTS;
 
-    public Rhyme(String word) {
-        String[] results = RhymeEngine.getAnimalsThatRhymeWith(word);
-        this.RESULTS = results;
-    }
+	public Rhyme(String[] rhymes) {
+		this.RESULTS = rhymes;
+	}
 
-    public String[] getResults() {
-        return this.RESULTS;
-    }
+	public String[] getResults() {
+		return this.RESULTS;
+	}
 }
