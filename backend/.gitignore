@@ -1,5 +1,6 @@
 # ------ Maven ignores ------
-.mvn/
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
 target/
 pom.xml.tag
 pom.xml.releaseBackup
