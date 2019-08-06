@@ -1,6 +1,4 @@
 # ------ Maven ignores ------
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -36,9 +34,6 @@ buildNumber.properties
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-
-# Created file at init
-AnimalsAndPhonetic.csv
 
 # Config file
 Config.java
