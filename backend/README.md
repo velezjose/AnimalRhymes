@@ -2,7 +2,7 @@
 Made with Spring Boot.
 
 ## Run in Development and Prod Mode
-`./mvnw spring-boot:run`
+`mvn spring-boot:run`
 
 ## TODO
 * Refactor
