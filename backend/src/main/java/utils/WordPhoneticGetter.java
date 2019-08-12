@@ -1,7 +1,7 @@
-package com.animalrhymes.server;
+package com.animalrhymes.utils;
 
 import com.jayway.jsonpath.*;
-
+import com.animalrhymes.exceptions.SavageException;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class WordPhoneticGetter {
 	private static final String PRONUNCIATION_FIELD = "fields=pronunciations";
 	private static int current = 0;
 
-	public static String getPhonetic(String word) {
+	public static String getPhonetic(String word) throws SavageException {
 		// API only handles 500 rpm. This is a lazy way to handle this.
 		current += 1;
 		if (current == 499) {
@@ -40,17 +40,23 @@ public class WordPhoneticGetter {
 					return (String) lhm.get("phoneticSpelling");
 				}
 			}
-
-			return "";
 		} catch (IOException | PathNotFoundException ex) {
 			// TODO: return 500 status to client
-			System.err.println("IOException thrown!");
-			ex.printStackTrace();
-			return "";
+			System.err.println("Phonetic not found. Possible incorrect word.");
+		} catch (SavageException savageXXX) {
+			System.err.println("----------------------------------------------");
+			System.err.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			System.err.println("SavageException:" + savageXXX.getMessage());
+			System.err.println("Exiting program. Will not be able to work unless APP_ID and APP_KEY are non-null.");
+			System.err.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			System.err.println("----------------------------------------------");
+			System.exit(0);
 		}
+
+		return "PHONETIC NOT FOUND";
 	}
 
-	private static String sendGET(String word) throws IOException {
+	private static String sendGET(String word) throws IOException, SavageException {
 		URL obj = new URL(GET_URL + word.toLowerCase() + "?" + PRONUNCIATION_FIELD);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
@@ -63,20 +69,20 @@ public class WordPhoneticGetter {
 		int responseCode = con.getResponseCode();
 		System.out.println("GET Response Code :: " + responseCode);
 
-		if (responseCode == HttpURLConnection.HTTP_OK) {
-			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-			String inputLine;
-			StringBuffer response = new StringBuffer();
+		try (BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()))) {
+			if (responseCode == HttpURLConnection.HTTP_OK) {
+				String inputLine;
+				StringBuffer response = new StringBuffer();
 
-			while ((inputLine = in.readLine()) != null) {
-				response.append(inputLine);
+				while ((inputLine = in.readLine()) != null) {
+					response.append(inputLine);
+				}
+
+				return response.toString();
+			} else {
+				System.out.println("Unable to GET " + word);
+				return "{ \"results\": [] }";
 			}
-			in.close();
-
-			return response.toString();
-		} else {
-			// TODO: Return 500 status to client
-			return "{ \"results\": [] }";
 		}
 	}
 }

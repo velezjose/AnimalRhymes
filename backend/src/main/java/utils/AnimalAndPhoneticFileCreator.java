@@ -1,4 +1,4 @@
-package com.animalrhymes.server;
+package com.animalrhymes.utils;
 
 import java.io.*;
 import java.util.List;
@@ -23,7 +23,7 @@ public class AnimalAndPhoneticFileCreator {
 				String phonetic = WordPhoneticGetter.getPhonetic(lastWordOfAnimal);
 				System.out.println("Animal -> " + animal + ", Phonetic -> " + phonetic);
 
-				if (phonetic.equals("NOT FOUND")) {
+				if (phonetic.equals("PHONETIC NOT FOUND")) {
 					System.out.println("REMOVE ANIMAL:" + animal);
 					continue;
 				}
@@ -33,9 +33,16 @@ public class AnimalAndPhoneticFileCreator {
 				if (curr != len) writer.newLine();
 			}
 
-		} catch (IOException ioe) {
-			System.err.println("IOException thrown!");
-			ioe.printStackTrace();
+			return;
+		} catch (IOException e) {
+			System.err.println("Could not create file! Please try again.");
+			e.printStackTrace();
+		} catch (Exception e) {
+			System.err.println("Exception thrown.");
+			e.printStackTrace();
 		}
+
+		System.out.println("Exiting program. 1, 2,.. ");
+		System.exit(0);
 	}
 }

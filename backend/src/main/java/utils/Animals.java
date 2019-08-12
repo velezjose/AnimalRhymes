@@ -1,4 +1,4 @@
-package com.animalrhymes.server;
+package com.animalrhymes.utils;
 
 /*
  * Contains a list of animals for MVP.
@@ -345,6 +345,7 @@ public class Animals {
 		"Kingfisher",
 		"Kiwi",
 		"Koala",
+		"Koi",
 		"Komodo Dragon",
 		"Kudu",
 		"Labradoodle",
