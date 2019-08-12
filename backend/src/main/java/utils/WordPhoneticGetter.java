@@ -44,12 +44,8 @@ public class WordPhoneticGetter {
 			// TODO: return 500 status to client
 			System.err.println("Phonetic not found. Possible incorrect word.");
 		} catch (SavageException savageXXX) {
-			System.err.println("----------------------------------------------");
-			System.err.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-			System.err.println("SavageException:" + savageXXX.getMessage());
+			savageXXX.printStackTrace();
 			System.err.println("Exiting program. Will not be able to work unless APP_ID and APP_KEY are non-null.");
-			System.err.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-			System.err.println("----------------------------------------------");
 			System.exit(0);
 		}
 
