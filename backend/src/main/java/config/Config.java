@@ -1,7 +1,7 @@
 package com.animalrhymes.server;
 
 public enum Config {
-	APP_ID(System.getenv().get("APP_ID")), APP_KEY(System.getenv().get("APP_KEY"));
+	APP_ID(System.getenv().get("ANIMAL_RHYMES_APP_ID")), APP_KEY(System.getenv().get("ANIMAL_RHYMES_APP_KEY"));
 
 	private final String value;
 
