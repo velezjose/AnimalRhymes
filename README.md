@@ -53,9 +53,9 @@ without these keys.)
 
 8. `cd ../backend # switch to backend directory`
 
-9. `export APP_ID="<APP_ID_FROM_OXFORD_API_GOES_HERE>" # export APP_ID as env variable`
+9. `export ANIMAL_RHYMES_APP_ID="<APP_ID_FROM_OXFORD_API_GOES_HERE>" # export Application Id as env variable`
 
-10. `export APP_KEY="APP_KEY_FROM_OXFORD_API_GOES_HERE" # same thing for APP_KEY`. Note for steps 9 and 10, you should
+10. `export ANIMAL_RHYMES_APP_KEY="<APP_KEY_FROM_OXFORD_API_GOES_HERE>" # same thing for Application Key`. Note for steps 9 and 10, you should
 not wrap your API keys in smart quotes. API keys should be wrapped in regular quotes (non-smart).
 
 11. `mvn spring-boot:run # inside backend directory`
