@@ -1,5 +1,9 @@
 package com.animalrhymes.server;
 
+import com.animalrhymes.exceptions.SavageException;
+import com.animalrhymes.utils.AnimalAndPhoneticFileCreator;
+import com.animalrhymes.utils.WordPhoneticGetter;
+
 import java.util.*;
 import java.io.*;
 import java.nio.file.Files;
@@ -24,7 +28,7 @@ public class RhymeEngine {
 	// Create HashMap from phonetic –> list of animals
 	private RhymeEngine() {
 		if (!Files.exists(Paths.get(FILENAME))) {
-			System.out.println("Creating file because does not exist...");
+			System.out.println("Creating " + FILENAME + " file because it does not exist...");
 			AnimalAndPhoneticFileCreator.createFile();
 			System.out.println("File created.");
 		}
@@ -61,20 +65,20 @@ public class RhymeEngine {
 				}
 				createdHashMap = true;
 				System.out.println("HashMap created successfully.");
-			} catch (IOException ioe) {
-				System.err.println("IOException thrown!");
-				ioe.printStackTrace();
+			} catch (Exception e) {
+				System.err.println("Could not create HashMap!");
+				e.printStackTrace();
 			}
 		}
 	}
 
-	public static String[] getAnimalsThatRhymeWith(String word) {
+	public static String[] getAnimalsThatRhymeWith(String word) throws SavageException {
 		String wordPhonetic = WordPhoneticGetter.getPhonetic(word);
 
 		System.out.println("Word -> " + word + ", Phonetic -> " + wordPhonetic + "\n");
 
-		if (wordPhonetic.equals("")) {
-			return DEFAULT_EMPTY_LIST;
+		if (wordPhonetic.equals("PHONETIC NOT FOUND")) {
+			return DEFAULT_EMPTY_LIST.clone();
 		}
 
 		for (int i = 0; i < wordPhonetic.length(); i += 1) {
