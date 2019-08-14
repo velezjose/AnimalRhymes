@@ -3,7 +3,6 @@ import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 
 class SearchRoot extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +13,9 @@ class SearchRoot extends React.Component {
   render() {
     return (
       <div>
-        <SearchBar onClickSearchCallback={this.onClickSearchCallback}></SearchBar>
+        <SearchBar
+          onClickSearchCallback={this.onClickSearchCallback}
+        ></SearchBar>
         <SearchResults searchResults={this.state.searchResults}></SearchResults>
       </div>
     );
@@ -22,11 +23,13 @@ class SearchRoot extends React.Component {
 
   onClickSearchCallback = async (query) => {
     let searchResults = await this.props.rhymeRepository.getRhymes(query);
-    console.log(`searched for ${query}, got ${JSON.stringify(searchResults, null, 2)}`);
+    console.log(
+      `searched for ${query}, got ${JSON.stringify(searchResults, null, 2)}`
+    );
     this.setState({
       searchResults: searchResults,
     });
-  }
+  };
 }
 
 export default SearchRoot;

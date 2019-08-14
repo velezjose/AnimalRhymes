@@ -3,9 +3,7 @@ import React from 'react';
 import horsePic from '../assets/horse.png';
 
 class Navbar extends React.Component {
-
   render() {
-
     let horsePicStyle = {
       width: '50px',
     };
@@ -14,10 +12,10 @@ class Navbar extends React.Component {
     };
     let reverseHorsePicStyle = Object.assign({}, horsePicStyle, flipImageStyle);
     return (
-      <div className='navbar'>
-        <img src={horsePic} alt='horse' style={horsePicStyle}></img>
+      <div className="navbar">
+        <img src={horsePic} alt="horse" style={horsePicStyle}></img>
         <h2>Animal Rhymes</h2>
-        <img src={horsePic} alt='horse' style={reverseHorsePicStyle} ></img>
+        <img src={horsePic} alt="horse" style={reverseHorsePicStyle}></img>
       </div>
     );
   }
