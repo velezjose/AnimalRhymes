@@ -15,7 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "fix": "prettier --write '**/*.js'",
+    "fix": "prettier --trailing-comma --write '**/*.js'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

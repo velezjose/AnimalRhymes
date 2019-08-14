@@ -1,6 +1,5 @@
-
 export class MockRhymeRepository {
-  getRhymes = async (query) => {
+  getRhymes = async query => {
     return [
       "barked the dog",
       "blurbed the frog",
@@ -8,5 +7,5 @@ export class MockRhymeRepository {
       "moaned the analog",
       "damn said the clam said the log",
     ];
-  } 
+  };
 }

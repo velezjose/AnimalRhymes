@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
 class SearchBar extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -13,21 +12,25 @@ class SearchBar extends React.Component {
     return (
       <div>
         <h2>Search</h2>
-        <input onChange={this.onChangeInput} type='text' placeholder='Of course'></input>
+        <input
+          onChange={this.onChangeInput}
+          type="text"
+          placeholder="Of course"
+        ></input>
         <button onClick={this.onClickSearch}>Search</button>
       </div>
     );
   }
 
-  onChangeInput = (event) => { 
+  onChangeInput = event => {
     this.setState({
       inputValue: event.target.value,
     });
-  }
+  };
 
-  onClickSearch = (event) => {
+  onClickSearch = event => {
     this.props.onClickSearchCallback(this.state.inputValue);
-  }
+  };
 }
 
 export default SearchBar;
