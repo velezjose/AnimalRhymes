@@ -12,12 +12,15 @@ class SearchBar extends React.Component {
     return (
       <div>
         <h2>Search</h2>
-        <input
-          onChange={this.onChangeInput}
-          type="text"
-          placeholder="Of course"
-        ></input>
-        <button onClick={this.onClickSearch}>Search</button>
+        <form onSubmit={this.onClickSearch}>
+          <input
+            onChange={this.onChangeInput}
+            type="text"
+            placeholder="Of course"
+            autoFocus
+          ></input>
+          <input type="submit" value="Search" />
+        </form>
       </div>
     );
   }
@@ -29,6 +32,7 @@ class SearchBar extends React.Component {
   };
 
   onClickSearch = event => {
+    event.preventDefault();
     this.props.onClickSearchCallback(this.state.inputValue);
   };
 }
