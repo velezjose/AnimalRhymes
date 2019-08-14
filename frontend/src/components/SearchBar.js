@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: "",
+      inputValue: '',
     };
   }
 
@@ -25,13 +25,13 @@ class SearchBar extends React.Component {
     );
   }
 
-  onChangeInput = event => {
+  onChangeInput = (event) => {
     this.setState({
       inputValue: event.target.value,
     });
   };
 
-  onClickSearch = event => {
+  onClickSearch = (event) => {
     event.preventDefault();
     this.props.onClickSearchCallback(this.state.inputValue);
   };

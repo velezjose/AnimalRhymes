@@ -1,12 +1,12 @@
-import React from "react";
-import SearchResult from "./SearchResult";
+import React from 'react';
+import SearchResult from './SearchResult';
 
 class SearchResults extends React.Component {
   render() {
     if (this.props.searchResults.length === 0) {
       return null;
     }
-    let searchResultList = this.props.searchResults.map(result => (
+    let searchResultList = this.props.searchResults.map((result) => (
       <SearchResult key={result} searchResult={result}></SearchResult>
     ));
     return (

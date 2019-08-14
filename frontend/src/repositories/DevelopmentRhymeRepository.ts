@@ -1,6 +1,6 @@
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosResponse } from 'axios';
 
-const LOCAL_SAVAGE_RHYMES_URL = "http://localhost:8080/savageRhymes";
+const LOCAL_SAVAGE_RHYMES_URL = 'http://localhost:8080/savageRhymes';
 
 export class DevelopmentRhymeRepository {
   getRhymes = async (query: string) => {

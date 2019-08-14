@@ -1,6 +1,6 @@
-import React from "react";
-import SearchBar from "./SearchBar";
-import SearchResults from "./SearchResults";
+import React from 'react';
+import SearchBar from './SearchBar';
+import SearchResults from './SearchResults';
 
 class SearchRoot extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class SearchRoot extends React.Component {
     );
   }
 
-  onClickSearchCallback = async query => {
+  onClickSearchCallback = async (query) => {
     let searchResults = await this.props.rhymeRepository.getRhymes(query);
     console.log(
       `searched for ${query}, got ${JSON.stringify(searchResults, null, 2)}`

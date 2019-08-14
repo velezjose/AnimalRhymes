@@ -15,7 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "fix": "prettier --trailing-comma --write '**/*.{js,jsx,ts,tsx,json}'",
+    "fix": "prettier --arrow-parens=always --single-quote --trailing-comma --write '**/*.{js,jsx,ts,tsx,json}'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
