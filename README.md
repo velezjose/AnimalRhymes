@@ -4,7 +4,7 @@ Alright bros, the moment you've all been waiting for. Animal rhymes is here and 
 minds! Get ready! Cause it's coming! And it's gonna be savage! 
 
 **We welcome pull requests!** (especially if we're missing any animals in our 
-[Animals.java](https://github.com/velezjose/AnimalRhymes/blob/master/backend/src/main/java/utils/Animals.java) class.)
+[AnimalsAndPhonetic.csv](https://github.com/velezjose/AnimalRhymes/blob/master/backend/AnimalsAndPhonetic.csv) file.)
 
 ## Loose API Documentation
 *GET* `/savageRhymes?q={query}`: Returns animals that rhyme with query.
