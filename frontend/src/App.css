@@ -36,4 +36,5 @@
 
 .Search-result {
   text-align: left;
+  font-size: calc(7px + 2vmin);
 }

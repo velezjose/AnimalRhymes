@@ -1,4 +1,4 @@
-package com.animalrhymes.server;
+package com.animalrhymes.engine;
 
 import com.animalrhymes.exceptions.SavageException;
 import com.animalrhymes.utils.AnimalAndPhoneticFileCreator;
@@ -7,10 +7,9 @@ import com.animalrhymes.utils.WordPhoneticGetter;
 import java.util.*;
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
-/*
+/**
  * The Rhyme Engine that gets a phonetic and matches it with a list of animals an returns that list
  * in the utility method getAnimalsThatRhymeWith(String word)
  */
@@ -25,7 +24,9 @@ public class RhymeEngine {
 		return new RhymeEngine();
 	}
 
-	// Create HashMap from phonetic –> list of animals
+	/**
+	 * Create HashMap: String phonetic ——> List<String> animals
+	 */
 	private RhymeEngine() {
 		if (!Files.exists(Paths.get(FILENAME))) {
 			System.out.println("Creating " + FILENAME + " file because it does not exist...");
@@ -44,7 +45,7 @@ public class RhymeEngine {
 
 				while ((line = bufferedReader.readLine()) != null) {
 					String[] animalAndPhonetic = line.split(",");
-					if (animalAndPhonetic.length < 2 || animalAndPhonetic[1].equals("OT FOUN")) continue;
+					if (animalAndPhonetic.length < 2) continue;
 
 					String animal = animalAndPhonetic[0];
 					String phonetic = animalAndPhonetic[1];

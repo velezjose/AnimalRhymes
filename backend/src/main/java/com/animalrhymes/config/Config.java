@@ -1,4 +1,4 @@
-package com.animalrhymes.utils;
+package com.animalrhymes.config;
 
 import com.animalrhymes.exceptions.SavageException;
 
