@@ -1,0 +1,1 @@
+web: export ANIMAL_RHYMES_APP_ID="7aa1d674" && export ANIMAL_RHYMES_APP_KEY="3c89084a113ff9cee0de64810bd0eb47" && mvn spring-boot:run;
