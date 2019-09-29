@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
-@CrossOrigin(origins = "https://animal-rhymes.herokuapp.com")
+@CrossOrigin(origins = "http://animal-rhymes.herokuapp.com")
 public class RhymeController {
 	@RequestMapping(value = "/savageRhymes", method = RequestMethod.GET)
 	public Rhyme savageRhymes(@RequestParam(value = "q", defaultValue = "bird") String word) throws SavageException {
