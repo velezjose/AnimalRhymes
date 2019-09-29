@@ -1,6 +1,6 @@
 package com.animalrhymes.utils;
 
-/*
+/**
  * Contains a list of animals for MVP.
  */
 public class Animals {

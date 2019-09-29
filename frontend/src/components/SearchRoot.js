@@ -7,6 +7,7 @@ class SearchRoot extends React.Component {
     super(props);
     this.state = {
       searchResults: [],
+      numSearches: 0,
     };
   }
 
@@ -16,18 +17,24 @@ class SearchRoot extends React.Component {
         <SearchBar
           onClickSearchCallback={this.onClickSearchCallback}
         ></SearchBar>
-        <SearchResults searchResults={this.state.searchResults}></SearchResults>
+        <SearchResults
+          searchResults={this.state.searchResults}
+          numSearches={this.state.numSearches}
+        ></SearchResults>
       </div>
     );
   }
 
   onClickSearchCallback = async (query) => {
     let searchResults = await this.props.rhymeRepository.getRhymes(query);
+
     console.log(
       `searched for ${query}, got ${JSON.stringify(searchResults, null, 2)}`
     );
+
     this.setState({
-      searchResults: searchResults,
+      searchResults,
+      numSearches: this.state.numSearches + 1,
     });
   };
 }

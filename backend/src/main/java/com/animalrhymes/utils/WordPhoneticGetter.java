@@ -1,5 +1,6 @@
 package com.animalrhymes.utils;
 
+import com.animalrhymes.config.Config;
 import com.jayway.jsonpath.*;
 import com.animalrhymes.exceptions.SavageException;
 import java.util.*;
@@ -10,7 +11,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/*
+/**
  * Class with one sole purpose: return the phonetic of some word using utility method getPhonetic(String word)
  */
 public class WordPhoneticGetter {

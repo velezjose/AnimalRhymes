@@ -1,4 +1,4 @@
-package com.animalrhymes.server;
+package com.animalrhymes.engine;
 
 import com.animalrhymes.exceptions.SavageException;
 import org.springframework.web.bind.annotation.CrossOrigin;

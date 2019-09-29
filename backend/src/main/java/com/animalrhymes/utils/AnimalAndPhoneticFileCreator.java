@@ -3,7 +3,7 @@ package com.animalrhymes.utils;
 import java.io.*;
 import java.util.List;
 
-/*
+/**
  * Creates a .csv file with SomeAnimal,ItsPhonetic using the list of animals in Animals.java
  */
 public class AnimalAndPhoneticFileCreator {
