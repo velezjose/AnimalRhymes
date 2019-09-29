@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 
-const SAVAGE_RHYMES_URL = 'https://animal-rhymes-frontend.herokuapp.com/savageRhymes';
+const SAVAGE_RHYMES_URL = 'https://animal-rhymes-backend.herokuapp.com/savageRhymes';
 
 export class DevelopmentRhymeRepository {
   getRhymes = async (query: string) => {
