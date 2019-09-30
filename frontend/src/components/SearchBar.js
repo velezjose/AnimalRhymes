@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div class="Content">
+      <div>
         <h2>Search</h2>
         <form onSubmit={this.onClickSearch}>
           <input

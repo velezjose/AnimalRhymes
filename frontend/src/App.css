@@ -26,11 +26,6 @@
   align-items: center;
 }
 
-.Content {
-  min-height: 40vh;
-  margin-top: -100px;
-}
-
 .App-link {
   color: #61dafb;
 }
